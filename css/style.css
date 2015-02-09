@@ -1,0 +1,16 @@
+/*
+PADDED === 30 - #Adds padding to an element.
+LPADDED === 15 - #Adds light padding to an element.
+MARGED === 30 - #Adds margin to an element, only top and left
+LMARGED === 15 - #Adds light margin to an element, only top and left
+*/
+
+/* Modal Styles */
+#modal_back{background:#ffffff;}
+#modal{position:relative;width:600px;height:400px;border:1px solid rgba(0,0,0,.12);background:#fff;box-shadow:0px 0px 10px rgba(0,0,0,.8);}
+#modal_head{position:relative;border-bottom:1px solid rgba(0,0,0,.12);cursor:move;line-height:2em;vertical-align: middle;}
+#modal_title{display:inline-block;font-size:1.25rem;line-height:2em;text-indent:16px;color:rgba(0,0,0,.87);margin-right:16px;}
+#modal_close{position:absolute;top:0;right:0;font-weight:700;}
+#modal_body{padding:16px;background:#ffffff;overflow:auto;height:calc(100% - 2em);height:-moz-calc(100% - 2em);height:-webkit-calc(100% - 2em);}
+#modal_body p:only-child{margin:0;}
+#modal_actions{position:absolute;bottom:0;left:0;width:100%;padding:16px;background:#ffffff;border-top:1px solid rgba(0,0,0,.12);}
