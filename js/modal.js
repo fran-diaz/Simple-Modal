@@ -27,7 +27,7 @@ function modal_open(title, url, autofill){
 }
 
 function modal_create_back(parent){
-    parent.append('<div id="modal_back" style="position:absolute;top:0;left:0;height:100%;width:100%;"></div>');
+    parent.append('<div id="modal_back"></div>');
 }
 
 function modal_create(parent){
@@ -72,7 +72,16 @@ function modal_center(){
                 $('#modal_body input').eq(0).focus();
             });
         });
-        $("#modal").center();
+        
+        var $images = $('#modal_body img'),
+            preloaded = 0,
+            total = $images.length;
+        $images.load(function() {
+            if (++preloaded === total) {
+                $("#modal").center().css('transform','none');
+            }
+        });
+
         if($.isFunction($.fn.draggable)){
             $("#modal").draggable({handle: '#modal_head'});
         }
@@ -83,7 +92,14 @@ function modal_center(){
         $("#modal").show('fold',{},400,function(){
             $('#modal_body input').eq(0).focus();
         });
-        $("#modal").inside_center();
+        var $images = $('#modal_body img'),
+            preloaded = 0,
+            total = $images.length;
+        $images.load(function() {
+            if (++preloaded === total) {
+                $("#modal").inside_center().css('transform','none');
+            }
+        });
     }
 }
 
